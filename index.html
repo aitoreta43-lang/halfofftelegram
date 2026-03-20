@@ -72,11 +72,10 @@
             .btn-telegram { padding: 12px 24px; font-size: 1.1rem; }
             .section-title { font-size: 1.8rem; }
         }
-        /* Hidden SEO enhancement (visible to bots but not users) – used only for structured data reinforcement */
         .seo-helper { display: none; }
     </style>
     
-    <!-- Enhanced JSON-LD (Organization, LocalBusiness, FAQPage, Product, Reviews) -->
+    <!-- Enhanced JSON-LD (Organization, LocalBusiness, Product with image & brand, FAQPage, Reviews) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -85,6 +84,7 @@
           "@type": "Organization",
           "name": "HalfOffTelegram",
           "url": "https://halfofftelegram.info",
+          "logo": "https://halfofftelegram.info/logo.png",
           "description": "Exclusive Telegram channel offering 50% discounts on flights, hotels, utility bills, smart plugs, and more across USA.",
           "sameAs": ["https://t.me/flights_bills_b4u"]
         },
@@ -101,8 +101,40 @@
           "@type": "Product",
           "name": "HalfOffTelegram Membership",
           "description": "Instant access to the best Telegram channel for half off flight tickets, bill payment coupons, smart plug discounts, and exclusive USA deals.",
-          "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "ratingCount": "342" },
-          "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "availability": "https://schema.org/OnlineOnly" }
+          "image": "https://halfofftelegram.info/logo.png",
+          "brand": {
+            "@type": "Brand",
+            "name": "HalfOffTelegram"
+          },
+          "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.9",
+            "bestRating": "5",
+            "ratingCount": "342"
+          },
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/OnlineOnly",
+            "shippingDetails": {
+              "@type": "OfferShippingDetails",
+              "shippingRate": {
+                "@type": "MonetaryAmount",
+                "value": "0",
+                "currency": "USD"
+              },
+              "shippingDestination": {
+                "@type": "DefinedRegion",
+                "addressCountry": "US"
+              }
+            },
+            "hasMerchantReturnPolicy": {
+              "@type": "MerchantReturnPolicy",
+              "applicableCountry": "US",
+              "returnPolicyCategory": "https://schema.org/MerchantReturnNotPermitted"
+            }
+          }
         },
         {
           "@type": "FAQPage",
@@ -204,14 +236,14 @@
     <div class="container">
         <p><i class="fab fa-telegram"></i> HalfOffTelegram.info — The #1 USA Flight, Bill & Plug Discount Hub</p>
         <p style="margin: 12px 0; font-size: 0.8rem;">Promotional landing page for the Telegram channel <strong>@flights_bills_b4u</strong>. All deals independently verified.</p>
-        <p> half off flights, half off plugs, half off telegram groups, bill discounts, smart plug deals, travel coupons, USA telegram deals.</p>
+        <p>📍  half off flights, half off plugs, half off telegram groups, bill discounts, smart plug deals, travel coupons, USA telegram deals.</p>
         <p style="margin-top: 20px;"><a href="/robots.txt" style="color:#9bb5d4;">robots.txt</a> | <a href="/sitemap.xml" style="color:#9bb5d4;">Sitemap</a></p>
         <p>© 2025 HalfOffTelegram — All rights reserved.</p>
     </div>
 </footer>
 
 <script>
-    // Rotational H1s: multiple H1s get rotated independently from a rich keyword set
+    // Rotational H1s
     const rotationalTexts = [
         "Half Off Flights & Bills: #1 Telegram Deals Channel USA",
         "Save 50% on Flights, Bills & Smart Plugs | HalfOffTelegram",
@@ -224,13 +256,12 @@
     ];
     const h1Elements = document.querySelectorAll('.rotational-h1');
     if (h1Elements.length) {
-        h1Elements.forEach((h1, idx) => {
-            // Each H1 gets a different random text from the list (or same rotation)
+        h1Elements.forEach((h1) => {
             const randomIndex = Math.floor(Math.random() * rotationalTexts.length);
             h1.textContent = rotationalTexts[randomIndex];
         });
     }
-    // Rotate document title as well
+    // Rotate document title
     const titles = [
         "Half Off Telegram | Flight, Bill & Plug Deals USA",
         "Half Off Flights & Bills: Join Best Telegram Group",
@@ -241,7 +272,6 @@
     document.title = titles[Math.floor(Math.random() * titles.length)];
 </script>
 
-<!-- hidden SEO reinforcement (safe, not spam) -->
 <div class="seo-helper" aria-hidden="true">
     <span>half off flights, half off plugs, half off telegram groups, flight discounts usa, bill payment discounts, smart plug deals, delta half off, united airlines coupon, xfinity discount, att bill promo, pg&e discount, southwest half off, american airlines deals, half off hotel, telegram deals usa, flights and bills b4u, halfofftelegram</span>
 </div>
